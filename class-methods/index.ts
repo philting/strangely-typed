@@ -1,20 +1,9 @@
-export type Alignment = 'neutral' | 'light' | 'dark';
-
 export class Jedi {
-  private alignment: Alignment;
-  constructor() {
-    this.alignment = 'neutral';
+  constructor() {}
+  greet() {
+    console.log('Hello.');
   }
-
-  public turnLight() {
-    this.alignment = 'light';
-  }
-
-  public turnDark = () => {
-    this.alignment = 'dark';
+  farewell = () => {
+    console.log('May the Force be with you.');
   };
-
-  public getAlignment() {
-    return this.alignment;
-  }
 }
