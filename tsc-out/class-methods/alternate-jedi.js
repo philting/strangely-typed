@@ -1,9 +1,10 @@
 export class Jedi {
     constructor() {
         /**
-         * ES only allows class methods to be function declarations
-         * rather than function expressions. This function will be
-         * hoisted into the constructor by the TypeScript compiler.
+         * Notice that because TypeScript will compile this file,
+         * VSCode does not flag this syntax as an error.
+         *
+         * This will also be hoisted into the constructor during compilation.
          */
         this.farewell = () => {
             console.log('May the Force be with you.');
