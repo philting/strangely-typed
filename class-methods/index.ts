@@ -1,9 +1,10 @@
 export class Jedi {
   constructor() {}
-  greet() {
+  public greet() {
     console.log('Hello.');
   }
-  farewell = () => {
+  // ES doesn't accept 
+  public farewell = () => {
     console.log('May the Force be with you.');
   };
 }
