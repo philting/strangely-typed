@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "outDir": "./tsc-out"
-  }
+    "outDir": "./tsc-out",
+    "allowJs": true,
+    "target": "es2021"
+  },
+  "exclude": ["node_modules", "tsc-out"]
 }
