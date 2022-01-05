@@ -7,17 +7,15 @@ export class Jedi {
          * TypeScript recognizes this as a property, not a method.
          */
         this.farewell = () => {
-            console.log(this);
-            console.log(`If you need help, ask the Council for ${this.getFirstName()}. May the Force be with you.`);
+            console.log(`If you need help, ask the Council for ${this.getFirstName()}.`, 'May the Force be with you.');
         };
-        this.firstName = n;
+        this.firstName = n ?? 'a Jedi';
     }
     /**
      * TypeScript recognizes this as a method.
      */
     greet() {
-        console.log(this);
-        console.log(`Hello, I am ${this.getFirstName()}`);
+        console.log(`Hello, I am ${this.getFirstName()}.`);
     }
     getFirstName() {
         return this.firstName;

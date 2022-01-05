@@ -2,14 +2,14 @@ export class Jedi {
   public firstName: string;
 
   constructor(n: string) {
-    this.firstName = n;
+    this.firstName = n ?? 'a Jedi';
   }
 
   /**
    * TypeScript recognizes this as a method.
    */
   public greet() {
-    console.log(`Hello, I am ${this.getFirstName()}`);
+    console.log(`Hello, I am ${this.getFirstName()}.`);
   }
 
   public getFirstName() {
@@ -24,7 +24,8 @@ export class Jedi {
    */
   public farewell = () => {
     console.log(
-      `If you need help, ask the Council for ${this.getFirstName()}. May the Force be with you.`,
+      `If you need help, ask the Council for ${this.getFirstName()}.`,
+      'May the Force be with you.',
     );
   };
 }
