@@ -38,7 +38,7 @@ parser Espree, which has been
 When targeting ES2021 or older, the TypeScript will move all class field
 definitions to the constructor, and define them as properties of the class. You
 can see this in the
-[`tsc-output`](../../tsc-output/class-arrow-function/jedi.js).
+[`js folder`](../../js/class-arrow-function/jedi.js).
 
 ```
 constructor(n) {
