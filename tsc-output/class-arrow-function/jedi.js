@@ -1,4 +1,7 @@
-export class Jedi {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Jedi = void 0;
+class Jedi {
     constructor(n) {
         /**
          * This function will be hoisted into the constructor
@@ -21,3 +24,4 @@ export class Jedi {
         return this.firstName;
     }
 }
+exports.Jedi = Jedi;

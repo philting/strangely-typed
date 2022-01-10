@@ -1,4 +1,7 @@
-export class Jedi {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Jedi = void 0;
+class Jedi {
     constructor() {
         this.turnDark = () => {
             this.alignment = 'dark';
@@ -12,3 +15,4 @@ export class Jedi {
         return this.alignment;
     }
 }
+exports.Jedi = Jedi;
