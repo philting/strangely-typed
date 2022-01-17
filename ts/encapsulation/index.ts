@@ -1,20 +1,33 @@
 export type Alignment = 'neutral' | 'light' | 'dark';
 
 export class Jedi {
-  private alignment: Alignment;
+  private classAlignment: Alignment;
+  public closureTurnLight: () => void;
+  public closureTurnDark: () => void;
+  public getClosureAlignment: () => Alignment;
+
   constructor() {
-    this.alignment = 'neutral';
+    this.classAlignment = 'neutral';
+
+    let closureAlignment: Alignment = 'neutral';
+    this.closureTurnLight = () => {
+      closureAlignment = 'light';
+    };
+    this.closureTurnDark = () => {
+      closureAlignment = 'dark';
+    };
+    this.getClosureAlignment = () => closureAlignment;
   }
 
-  public turnLight() {
-    this.alignment = 'light';
+  public classTurnLight() {
+    this.classAlignment = 'light';
   }
 
-  public turnDark = () => {
-    this.alignment = 'dark';
+  public classTurnDark = () => {
+    this.classAlignment = 'dark';
   };
 
   public getAlignment() {
-    return this.alignment;
+    return this.classAlignment;
   }
 }
