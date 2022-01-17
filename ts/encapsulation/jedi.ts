@@ -1,10 +1,21 @@
 export type Alignment = 'neutral' | 'light' | 'dark';
 
 export class Jedi {
+  /**
+   * tsPrivateAlignment is not properly encapsulated in the js file
+   * and is accessible in JavaScript runtimes.
+   * 
+   * As of TypeScript 4.5.4, this does not get converted into JS
+   * private identifiers (i.e. prefixed with #), even with compile targets
+   * that support private variables. See esnext/encapsulation for details.
+   */
   private tsPrivateAlignment: Alignment;
+
+  /**
+   * If we add "private" before #esPrivateAlignment, we'll get the following error:
+   * An accessibility modifier cannot be used with a private identifier. ts(18010)
+   */
   #esPrivateAlignment: Alignment;
-  // If we add "private" before #esPrivateAlignment, we'll get the following error:
-  // An accessibility modifier cannot be used with a private identifier.ts(18010)
 
   public closureTurnLight: () => void;
   public closureTurnDark: () => void;
@@ -28,20 +39,20 @@ export class Jedi {
     this.tsPrivateAlignment = 'light';
   }
 
-  public tsPrivateTurnDark = () => {
+  public tsPrivateTurnDark() {
     this.tsPrivateAlignment = 'dark';
-  };
+  }
+
+  public getTsPrivateAlignment() {
+    return this.tsPrivateAlignment;
+  }
 
   public esPrivateTurnLight() {
     this.#esPrivateAlignment = 'light';
   }
 
-  public esPrivateTurnDark = () => {
+  public esPrivateTurnDark() {
     this.#esPrivateAlignment = 'dark';
-  };
-
-  public getTsPrivateAlignment() {
-    return this.tsPrivateAlignment;
   }
 
   public getEsPrivateAlignment() {
