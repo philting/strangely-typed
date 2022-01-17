@@ -1,13 +1,18 @@
 export type Alignment = 'neutral' | 'light' | 'dark';
 
 export class Jedi {
-  private classAlignment: Alignment;
+  private tsPrivateAlignment: Alignment;
+  #esPrivateAlignment: Alignment;
+  // If we add "private" before #esPrivateAlignment, we'll get the following error:
+  // An accessibility modifier cannot be used with a private identifier.ts(18010)
+
   public closureTurnLight: () => void;
   public closureTurnDark: () => void;
   public getClosureAlignment: () => Alignment;
 
   constructor() {
-    this.classAlignment = 'neutral';
+    this.tsPrivateAlignment = 'neutral';
+    this.#esPrivateAlignment = 'neutral';
 
     let closureAlignment: Alignment = 'neutral';
     this.closureTurnLight = () => {
@@ -19,15 +24,27 @@ export class Jedi {
     this.getClosureAlignment = () => closureAlignment;
   }
 
-  public classTurnLight() {
-    this.classAlignment = 'light';
+  public tsPrivateTurnLight() {
+    this.tsPrivateAlignment = 'light';
   }
 
-  public classTurnDark = () => {
-    this.classAlignment = 'dark';
+  public tsPrivateTurnDark = () => {
+    this.tsPrivateAlignment = 'dark';
   };
 
-  public getAlignment() {
-    return this.classAlignment;
+  public esPrivateTurnLight() {
+    this.#esPrivateAlignment = 'light';
+  }
+
+  public esPrivateTurnDark = () => {
+    this.#esPrivateAlignment = 'dark';
+  };
+
+  public getTsPrivateAlignment() {
+    return this.tsPrivateAlignment;
+  }
+
+  public getEsPrivateAlignment() {
+    return this.#esPrivateAlignment;
   }
 }
