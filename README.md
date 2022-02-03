@@ -50,4 +50,4 @@ Hello, I am Anakin.
 undefined
 ```
 
-See the [`js`](./js/README.md) folder for more details.
+See the [`es`](./es/README.md) folder for more details.
